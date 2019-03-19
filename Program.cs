@@ -42,13 +42,11 @@ namespace HaveIBeenPwned
                     if (response.Contains(hashRest))
                     {
                         // You have been pwned
-                        string[] arr = response.Split('\n');
                         response = response.Delete('\r');
                         string amount = response.Substring(response.IndexOf(hashRest));
                         amount = amount.Substring(amount.IndexOf(":") + 1);
                         amount = amount.Substring(0, amount.IndexOf("\n"));
                         Console.WriteLine(string.Format("Das Passwort '{0}' wurde {1} mal in der Datenbank gefunden!", password, amount));
-                        Console.WriteLine(string.Format("Außerdem sind {0} Variationen des Passwortes bekannt.", arr.Count()));
                     }
                     else Console.WriteLine(string.Format("Das Passwort '{0}' wurde bisher nicht geknackt!", password));
                 }
