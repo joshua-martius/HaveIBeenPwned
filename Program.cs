@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,6 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Net.Http;
 using System.Net;
-
 
 namespace HaveIBeenPwned
 {
@@ -22,6 +20,7 @@ namespace HaveIBeenPwned
             while (true)
             {
                 string password = Console.ReadLine();
+                if (password.Equals("!exit")) break;
                 Console.Clear();
                 byte[] byteString = Encoding.UTF8.GetBytes(password);
                 byte[] Bytes = null;
